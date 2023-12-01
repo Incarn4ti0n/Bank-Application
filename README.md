@@ -7,15 +7,15 @@ You can login into 4 acounts made as objects. Here are logins and passwords:
     <th>Password</th>
   </tr>
   <tr> 
-    <td>dm</td>
+    <td>js</td>
     <td>1111</td>
   </tr>
   <tr>
-    <td>hw</td>
+    <td>jd</td>
     <td>2222</td>
   </tr>
   <tr>
-    <td>bm</td>
+    <td>stw</td>
     <td>3333</td>
   </tr>
    <tr>
