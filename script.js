@@ -135,8 +135,12 @@ btnLogin.addEventListener('click', function (e) {
   currentAccount = accounts.find(
     acc => acc.username === inputLoginUsername.value
   );
-  
-  inputTransferAmount.value = inputTransferTo.value = '';
+
+  inputTransferAmount.value =
+    inputTransferTo.value =
+    inputCloseUsername.value =
+    inputClosePin.value =
+      '';
 
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
     // Display UI and welcome message
@@ -148,6 +152,7 @@ btnLogin.addEventListener('click', function (e) {
 
     //Clear input fields
     inputLoginUsername.value = inputLoginPin.value = '';
+
     inputLoginPin.blur();
 
     // Update UI
@@ -178,6 +183,17 @@ btnTransfer.addEventListener('click', function (e) {
 
     updateUI(currentAccount);
   }
+});
+
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
+  if (
+    inputCloseUsername.value === currentAccount.username &&
+    Number(inputClosePin.value) === currentAccount.pin
+  );
+  const index = accounts.findIndex(acc => acc.username === inputCloseUsername.value);
+  
+  accounts.splice(index, 1);
 });
 
 // console.log(accounts);
@@ -450,3 +466,4 @@ for (const acc of accounts) {
   acc.owner === 'Jessica Davis' && console.log(acc);
 }
 */
+//-------- THE FIND INDEX METHOD --------
