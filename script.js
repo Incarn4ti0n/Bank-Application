@@ -61,7 +61,7 @@ const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
 
-const displayMovements = function (movements, sort = false) {
+const displayMovements = function (movements, sort) {
   containerMovements.innerHTML = "";
 
   const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
@@ -203,7 +203,10 @@ btnClose.addEventListener("click", function (e) {
   containerApp.style.opacity = 0;
 });
 
+let sorted = false;
+
 btnSort.addEventListener("click", function (e) {
   e.preventDefault();
-  displayMovements(currentAccount.movements, true);
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
 });
